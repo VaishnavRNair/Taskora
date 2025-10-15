@@ -1,4 +1,4 @@
-export default function Tasklist({ tasks, updateTask, deleteTask }) {
+export default function TaskList({ tasks, updateTask, deleteTask }) {
 
   const toggleComplete = (index) => {
     const updatedTask = { ...tasks[index], completed: !tasks[index].completed };
@@ -6,10 +6,10 @@ export default function Tasklist({ tasks, updateTask, deleteTask }) {
   };
 
   return (
-    <div>
+    <div className="task-list">
       <ul>
         {tasks.map((task, index) => (
-          <li key={index}>
+          <li key={index} className= {task.completed ? 'completed' : ''}>
             <div>
               <span>
                 {task.text}
